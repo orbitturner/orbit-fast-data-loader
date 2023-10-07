@@ -1,0 +1,21 @@
+# Dev Dependencies
+node_modules
+
+# Sensitive Data
+.env
+
+# Misc
+prompt.orbit.ini
+
+# Logs
+binaries/logs
+
+# Builds
+dist
+dist/*
+
+# Setups Binaries for programs and plugins
+scripts/postgresql-setup.exe
+binaries/orbit-fast-data-loader-linux
+binaries/orbit-fast-data-loader-macos
+binaries/orbit-fast-data-loader-win.exe
