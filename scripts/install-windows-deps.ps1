@@ -1,5 +1,14 @@
 # Install-Windows-Deps.ps1
 
+# Teste les privilèges administratifs
+$adminRights = ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
+
+# Vérifie si l'utilisateur a les droits d'administrateur
+if (-not $adminRights) {
+    return Write-Host "❌ Please Bro RUN this script as an SUDO. Right-click the PowerShell icon and select 'Run as Administrator.' 😫😫 Are you Mad ?!"
+}
+
+
 # Emoji constants
 $successEmoji = "✅"
 $errorEmoji = "❌"

@@ -1,7 +1,6 @@
 import { exec } from 'child_process';
 import { logger } from '../utils/logger';
 import { ConnectionOptions, ImportOptions } from '../utils/types';
-import chalk from 'chalk';
 import ora from 'ora';
 
 export function importData(options: ConnectionOptions & ImportOptions): void {

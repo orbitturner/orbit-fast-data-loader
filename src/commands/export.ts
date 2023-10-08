@@ -1,9 +1,7 @@
 import { exec } from 'child_process';
 import { ConnectionOptions, ExportOptions } from '../utils/types';
 import { logger } from '../utils/logger';
-import chalk from 'chalk';
 import ora from 'ora';
-
 
 export function exportData(options: ConnectionOptions & ExportOptions): void {
     const { sgbd, file, host, port, database, username, password, separator, tablename, schema } = options;

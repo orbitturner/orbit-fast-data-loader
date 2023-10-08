@@ -1,30 +1,10 @@
+import chalk from 'chalk';
 import figlet from 'figlet';
 
 export function showBanner() {
-  // return new Promise((resolve, reject) => {
-  //   figlet.text('OrbitFastDataLoader', {
-  //     font: 'Standard', // Choisir la police de caractères (consultez la documentation pour plus d'options)
-  //     horizontalLayout: 'default',
-  //     verticalLayout: 'default',
-  //   }, (error: any, banner: any) => {
-  //     if (error) {
-  //       console.error('Error generating banner:', error);
-  //       reject(error);
-  //     }
-  //     console.log(banner);
-  //     resolve(banner);
-  //   });
-  // });
-  
-  return figlet.text('OrbitFastDataLoader', {
+  return console.log(chalk.magenta(figlet.textSync('OrbitFastDataLoader', {
     font: 'Standard', // Choisir la police de caractères (consultez la documentation pour plus d'options)
     horizontalLayout: 'default',
     verticalLayout: 'default',
-  }, (error: any, banner: any) => {
-    if (error) {
-      console.error('Error generating banner:', error);
-      return;
-    }
-    return console.log(banner);
-  });
+  })));
 }

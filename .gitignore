@@ -9,6 +9,7 @@ prompt.orbit.ini
 
 # Logs
 binaries/logs
+src/logs
 
 # Builds
 dist

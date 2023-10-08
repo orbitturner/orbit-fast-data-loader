@@ -8,11 +8,11 @@ class Logger {
 
   private constructor() {
     // log the content of the app base directory like ls command
-    const execRootDir = path.join(process.execPath, '..')
-    // const myPath = path.join(__dirname, '../');
+    // const execRootDir = path.join(process.execPath, '..')
+    const myPath = path.join(__dirname, '../');
     // console.log(chalk.yellow(`--> My Virtual Path Content : ${fs.readdirSync(myPath)}`));
     
-    this.logDir = path.join(execRootDir, 'logs');
+    this.logDir = path.join(myPath, 'logs');
     this.createLogDir();
   }
 
