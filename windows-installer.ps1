@@ -25,7 +25,7 @@ Write-Host "🏗 Building the project..."
 npm run build
 
 # Détermine le répertoire où stocker les applications
-$app_directory="C:\Program Files\OrbitFastDataLoader"
+$app_directory = "C:\Program Files\OrbitFastDataLoader"
 
 # Crée le répertoire s'il n'existe pas
 Write-Host "📁 Creating directory: $app_directory"
@@ -33,14 +33,13 @@ New-Item -ItemType Directory -Force -Path $app_directory
 
 # Copie l'exécutable dans le répertoire des applications
 Write-Host "🚚 Copying the executable to $app_directory..."
-Copy-Item .\dist\index.js $app_directory\OrbitFastDataLoader.js
+Copy-Item .\dist\index.js "$app_directory\OrbitFastDataLoader.js"
 
 # Crée un script batch pour exécuter l'application
-Add-Content $app_directory\OrbitFastDataLoader.bat "node $app_directory\OrbitFastDataLoader.js `%*` "
+Add-Content "$app_directory\OrbitFastDataLoader.bat" "node \`"$app_directory\OrbitFastDataLoader.js\`" \`"%*\`" "
 
 # Ajoute le répertoire des applications au PATH
-$newPath = [Environment]::GetEnvironmentVariable("Path", [EnvironmentVariableTarget]::Machine) + ";$app_directory"
+$newPath = [System.Environment]::GetEnvironmentVariable('Path', [System.EnvironmentVariableTarget]::Machine) + ";$app_directory"
 [Environment]::SetEnvironmentVariable("Path", $newPath, [EnvironmentVariableTarget]::Machine)
-
 
 Write-Host "🎉 Installation completed successfully. You can now use 'OrbitFastDataLoader' from the command line."
