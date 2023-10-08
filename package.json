@@ -1,6 +1,6 @@
 {
   "name": "orbit-fast-data-loader",
-  "version": "1.0.0",
+  "version": "1.1.2",
   "description": "💥 Accélérez vos opérations de données massives avec OrbitFastDataLoader ! ⚡️ Importez ou extrayez des quantités énormes de données en un temps record vers PostgreSQL ou SQL Server. 💪💾 Simplifiez votre flux de travail et obtenez des résultats rapides et efficaces dès maintenant ! 💥💼 #OrbitFastDataLoader #DataPowerUnleashed",
   "main": "src/index.ts",
   "bin": "index.js",
