@@ -8,12 +8,13 @@ if (-not $adminRights) {
 
 Write-Host "💻 === Windows Installation === 💻"
 
-# Clone le repo
-Write-Host "🔄 Cloning the repository..."
-git clone https://github.com/orbitturner/orbit-fast-data-loader
+# Clone le repo dans le répertoire temporaire
+$temp_directory = [System.IO.Path]::Combine($env:TEMP, 'orbit-fast-data-loader')
+Write-Host "🔄 Cloning the repository to $temp_directory..."
+git clone https://github.com/orbitturner/orbit-fast-data-loader $temp_directory
 
 # Navigue vers le répertoire cloné
-cd .\orbit-fast-data-loader
+cd $temp_directory
 
 # Installe les dépendances
 Write-Host "🛠 Installing dependencies..."
@@ -30,15 +31,19 @@ $app_directory = "C:\Program Files\OrbitFastDataLoader"
 Write-Host "📁 Creating directory: $app_directory"
 New-Item -ItemType Directory -Force -Path $app_directory
 
-# Copie l'exécutable dans le répertoire des applications
+# Copie tout le contenu de dist dans le répertoire des applications
 Write-Host "🚚 Copying the executable to $app_directory..."
-Copy-Item .\dist\index.js "$app_directory\OrbitFastDataLoader.js"
+Copy-Item .\dist\* $app_directory -Recurse
 
 # Crée un script batch pour exécuter l'application
-Add-Content "$app_directory\OrbitFastDataLoader.bat" "node \`"$app_directory\OrbitFastDataLoader.js\`" \`"%*\`" "
+Add-Content "$app_directory\OrbitFastDataLoader.bat" "node \`"$app_directory\index.js\`" \`"%*\`" "
 
 # Ajoute le répertoire des applications au PATH
 $newPath = [System.Environment]::GetEnvironmentVariable('Path', [System.EnvironmentVariableTarget]::Machine) + ";$app_directory"
 [Environment]::SetEnvironmentVariable("Path", $newPath, [EnvironmentVariableTarget]::Machine)
+
+# Exécute la commande refreshenv pour prendre en compte les changements dans l'environnement
+Write-Host "🔄 Refreshing the environment..."
+refreshenv
 
 Write-Host "🎉 Installation completed successfully. You can now use 'OrbitFastDataLoader' from the command line."
