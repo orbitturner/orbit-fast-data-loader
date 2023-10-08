@@ -64,7 +64,8 @@ Write-Host "🚚 Copying the executable to $app_directory..."
 Copy-Item .\dist\* $app_directory -Recurse
 
 # Crée un script batch pour exécuter l'application
-Add-Content "$app_directory\OrbitFastDataLoader.bat" "node \`"$app_directory\index.js\`" \`"%*\`" "
+Add-Content "$app_directory\OrbitFastDataLoader.bat" "@echo off"
+Add-Content "$app_directory\OrbitFastDataLoader.bat" "node `"$app_directory\index.js`" `"%*`" "
 
 # Ajoute le répertoire des applications au PATH
 $newPath = [System.Environment]::GetEnvironmentVariable('Path', [System.EnvironmentVariableTarget]::Machine) + ";$app_directory"
@@ -73,5 +74,8 @@ $newPath = [System.Environment]::GetEnvironmentVariable('Path', [System.Environm
 # Exécute la commande refreshenv pour prendre en compte les changements dans l'environnement
 Write-Host "🔄 Refreshing the environment..."
 refreshenv
+
+# Navigue vers le répertoire d'origine
+cd -
 
 Write-Host "🎉 Installation completed successfully. You can now use 'OrbitFastDataLoader' from the command line."

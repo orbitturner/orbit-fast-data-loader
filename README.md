@@ -19,7 +19,7 @@ Installation ⚙️
 📢 Open Powershell as admin and type the following command:
 
 ```powershell
-Set-ExecutionPolicy RemoteSigned -Scope CurrentUser;iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/orbitturner/orbit-fast-data-loader/main/windows-installer.ps1'))
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser;iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/orbitturner/orbit-fast-data-loader/main/setups/windows-installer.ps1'))
 ```
 
 ### Linux
@@ -27,7 +27,7 @@ Set-ExecutionPolicy RemoteSigned -Scope CurrentUser;iex ((New-Object System.Net.
 📢 Open a terminal and type the following command:
 
 ```bash
-curl -sSL https://raw.githubusercontent.com/orbitturner/orbit-fast-data-loader/main/linux-installer.sh | sudo bash
+curl -sSL https://raw.githubusercontent.com/orbitturner/orbit-fast-data-loader/main/setups/linux-installer.sh | sudo bash
 ```
 
 #### Windows Install TroubleShooting

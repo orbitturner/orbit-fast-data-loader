@@ -22,6 +22,7 @@ import { installDependencies } from './commands/install';
  * 💨 My Twitter   : https://twitter.com/orbitturner
  */
 
+showBanner();
 
 // Importez le fichier package.json
 let packageJson;
@@ -35,8 +36,6 @@ if (__filename.endsWith('.ts')) {
   // Le script est exécuté en tant que fichier JavaScript (après compilation)
   packageJson = require('./package.json');
 }
-
-showBanner();
 
 program.version(packageJson.version).description(packageJson.description);
 
@@ -84,7 +83,8 @@ program
         exportData(options);
     });
 
-program.on('--help', () => {
+program.on('-h, --help', async () => {
+    await showBanner();
     console.log('');
     console.log('\n==> Examples:');
     console.log('  $ OrbitFastDataLoader import --sgbd sqlserver -h localhost -p 1433 -d mydatabase -u myuser -P mypassword -t mytable -c dbo -f data.csv -s ,');
