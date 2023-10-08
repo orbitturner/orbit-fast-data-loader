@@ -29,7 +29,7 @@ export function installDependencies(): void {
   if (platform === 'win32') {
     // Installation sur Windows
     scriptFileName = 'install-windows-deps.ps1';
-    scriptPath = `powershell -File ${join(scriptDirectory, scriptFileName)}`;
+    scriptPath = `powershell -File "${join(scriptDirectory, scriptFileName)}"`;
   } else {
     // Installation sur Linux / macOS
     scriptFileName = 'install-linux-deps.sh';
