@@ -4,7 +4,7 @@ $adminRights = ([Security.Principal.WindowsPrincipal] [Security.Principal.Window
 # Vérifie si l'utilisateur a les droits d'administrateur
 if (-not $adminRights) {
     Write-Host "❌ Please Bro RUN this script as an SUDO. Right-click the PowerShell icon and select 'Run as Administrator.' 😫😫 Are you Mad ?!"
-    Exit
+    return
 }
 
 Write-Host "💻 === Windows Installation === 💻"
