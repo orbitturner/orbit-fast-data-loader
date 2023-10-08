@@ -24,7 +24,17 @@ import { installDependencies } from './commands/install';
 
 
 // Importez le fichier package.json
-const packageJson = require('../package.json');
+let packageJson;
+
+if (__filename.endsWith('.ts')) {
+  // console.log('Running TypeScript file!');
+  // Le script est exécuté en tant que fichier TypeScript
+  packageJson = require('../package.json');
+} else {
+  // console.log('Running JavaScript file!');
+  // Le script est exécuté en tant que fichier JavaScript (après compilation)
+  packageJson = require('./package.json');
+}
 
 showBanner();
 
