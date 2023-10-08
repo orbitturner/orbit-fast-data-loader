@@ -39,6 +39,8 @@ Copy-Item .\dist\index.js $app_directory\OrbitFastDataLoader.js
 Add-Content $app_directory\OrbitFastDataLoader.bat "node $app_directory\OrbitFastDataLoader.js `%*` "
 
 # Ajoute le répertoire des applications au PATH
-[Environment]::SetEnvironmentVariable("Path", "$($env:Path);$app_directory", [EnvironmentVariableTarget]::Machine)
+$newPath = [Environment]::GetEnvironmentVariable("Path", [EnvironmentVariableTarget]::Machine) + ";$app_directory"
+[Environment]::SetEnvironmentVariable("Path", $newPath, [EnvironmentVariableTarget]::Machine)
+
 
 Write-Host "🎉 Installation completed successfully. You can now use 'OrbitFastDataLoader' from the command line."
