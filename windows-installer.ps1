@@ -25,7 +25,7 @@ Write-Host "🏗 Building the project..."
 npm run build
 
 # Détermine le répertoire où stocker les applications
-$app_directory="C:\%programfiles%\OrbitFastDataLoader"
+$app_directory="C:\Program Files\OrbitFastDataLoader"
 
 # Crée le répertoire s'il n'existe pas
 Write-Host "📁 Creating directory: $app_directory"
