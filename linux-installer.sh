@@ -2,6 +2,13 @@
 
 echo "🐧 === Linux Installation === 🐧"
 
+# Vérifie si le script est exécuté en tant que root (administrateur)
+if [ "$EUID" -ne 0 ]; then
+    echo "❌ Please run this script as root (administrator). Use 'sudo ./linux-installer.sh'. 😫 Are you Mad ?!"
+    exit 1
+fi
+
+
 # Clone le repo
 echo "🔄 Cloning the repository..."
 git clone https://github.com/orbitturner/orbit-fast-data-loader
