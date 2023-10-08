@@ -16,44 +16,34 @@ Installation ⚙️
 
 ### Windows
 
-On Windows, you need to install the following dependencies found in the *`scripts`* folder as admin before running the tool:
+📢 Open Powershell as admin and type the following command:
 
-*   _(If not already present)_ Download & Rename [postgresql-X.X-X-windows-x64.exe](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads) as `postgresql-setup.exe` and put it under *`scripts`* folder.
-*   _(If not already present)_ Download & Rename [Microsoft ODBC Driver for SQL](https://learn.microsoft.com/fr-fr/sql/connect/odbc/download-odbc-driver-for-sql-server?view=sql-server-ver16) as `msodbcsql.msi` and put it under *`scripts`* folder.
-*   _(If not already present)_ Download & Rename [Microsoft Command Line Utilities 11 for SQL Server / sqlcmd & bcp MSI](https://www.microsoft.com/en-us/download/details.aspx?id=36433) as `mssqlcli-tools-setup.msi` and put it under *`scripts`* folder.
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/orbitturner/orbit-fast-data-loader/main/windows-installer.ps1'))"
+```
 
+### Linux
 
-### Install Command
+📢 Open a terminal and type the following command:
 
-After That you can install dependencies using the following command:
+```bash
+curl -sSL https://raw.githubusercontent.com/orbitturner/orbit-fast-data-loader/main/linux-installer.sh | sudo bash
+```
 
-    node dist/index.js install
-
-This will ensure that the necessary dependencies, including BCP and PSQL, are installed.
-
-> **Note:** This command works as well on linux for deps.
-
-
-#### Windows TroubleShooting
+#### Windows Install TroubleShooting
 - First Install Postgres by launching the following command on the cmd in scripts folder: 
  `./postgresql-setup.exe --enable-components commandlinetools --disable-components server`.
 
 - Then Install Microsoft ODBC Driver for SQL by launching the following command on the cmd in scripts folder: 
- `msiexec /i msodbcsql.msi` or **launch the msi as admin**.
+ `msiexec /i msodbcsql.msi` or **Double-Click the msi as admin**.
 
 - Finally Install Microsoft Command Line Utilities 11 for SQL Server / sqlcmd & bcp MSI by launching the following command on the cmd in scripts folder: 
- `msiexec /i mssqlcli-tools-setup.msi` or **launch the msi as admin**.
+ `msiexec /i mssqlcli-tools-setup.msi` or **Double-Click the msi as admin**.
 
 
-#### Linux TroubleShooting
+#### Linux Install TroubleShooting
 >> **Note:** If the install command doesn't work install the dependency manually. With [here](https://learn.microsoft.com/en-us/sql/linux/sql-server-linux-setup-tools?view=sql-server-ver16&tabs=redhat-install).
 
-
-### Build
-
-To build the project, run the following command:
-
-    npm run build
 
 Usage 🚀
 --------
@@ -88,6 +78,12 @@ Again, replace the placeholders with your specific parameters.
 *   `-c, --schema <schema>`: Specify the schema.
 *   `-f, --file <file>`: Specify the input or output file.
 *   `-s, --separator <separator>`: Specify the field separator for CSV files.
+
+### Development
+
+To build the project, run the following command:
+
+    npm run build
 
 Contributing 🤝
 ---------------

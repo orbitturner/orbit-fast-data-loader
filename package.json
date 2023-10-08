@@ -8,7 +8,7 @@
     "test": "jest --config jestconfig.json",
     "prebuild": "rimraf dist",
     "build": "tsc && cpy package.json dist && cpy node_modules dist && cpy scripts dist",
-    "postbuild": "cd dist && yarn run pkg .",
+    "postbuild": "echo \"🟢 BUILD SUCCESSFUL 🟢\"",
     "format": "prettier --write \"src/**/*.ts\" \"dist/**/*.js\"",
     "lint": "tslint -p tsconfig.json",
     "prepare": "npm run build",

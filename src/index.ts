@@ -32,7 +32,7 @@ program.version(packageJson.version).description(packageJson.description);
 
 // Commande d'installation des dépendances
 program
-  .command('install')
+  .command('install-deps')
   .description('Install dependencies')
   .action(() => {
     installDependencies();
@@ -80,7 +80,7 @@ program.on('--help', () => {
     console.log('  $ OrbitFastDataLoader import --sgbd sqlserver -h localhost -p 1433 -d mydatabase -u myuser -P mypassword -t mytable -c dbo -f data.csv -s ,');
     console.log('  $ OrbitFastDataLoader export --sgbd postgresql -h localhost -p 5432 -d mydatabase -u myuser -P mypassword -t mytable -c public -f data.csv -s ,');
     console.log('');
-    console.log('  $ OrbitFastDataLoader install');
+    console.log('  $ OrbitFastDataLoader install-deps');
 });
 
 // Gestion des erreurs de commande inconnue

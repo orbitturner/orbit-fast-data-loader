@@ -28,11 +28,11 @@ export function installDependencies(): void {
 
   if (platform === 'win32') {
     // Installation sur Windows
-    scriptFileName = 'install-windows.bat';
-    scriptPath = join(scriptDirectory, scriptFileName);
+    scriptFileName = 'install-windows-deps.ps1';
+    scriptPath = `powershell -File ${join(scriptDirectory, scriptFileName)}`;
   } else {
     // Installation sur Linux / macOS
-    scriptFileName = 'install-linux.sh';
+    scriptFileName = 'install-linux-deps.sh';
     scriptPath = join(scriptDirectory, scriptFileName);
   }
   logger.info(`Script path: ${scriptPath}`);
