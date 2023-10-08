@@ -52,7 +52,7 @@ Usage 🚀
 
 To import data into the database, use the following command:
 
-    node dist/index.js import --sgbd <sgbd> -h <host> -p <port> -d <database> -u <username> -P <password> -t <tablename> -c <schema> -f <file> -s <separator>
+    OrbitFastDataLoader import --sgbd <sgbd> -h <host> -p <port> -d <database> -u <username> -P <password> -t <tablename> -c <schema> -f <file> -s <separator>
       
 
 Replace the placeholders (`<sgbd>`, `<host>`, etc.) with your specific parameters.
@@ -61,7 +61,7 @@ Replace the placeholders (`<sgbd>`, `<host>`, etc.) with your specific parameter
 
 To export data from the database, use the following command:
 
-    node dist/index.js export --sgbd <sgbd> -h <host> -p <port> -d <database> -u <username> -P <password> -t <tablename> -c <schema> -f <file> -s <separator>
+    OrbitFastDataLoader export --sgbd <sgbd> -h <host> -p <port> -d <database> -u <username> -P <password> -t <tablename> -c <schema> -f <file> -s <separator>
       
 
 Again, replace the placeholders with your specific parameters.
