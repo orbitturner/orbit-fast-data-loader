@@ -3,6 +3,11 @@ OrbitFastDataLoader 🚀
 
 OrbitFastDataLoader is a command-line interface (CLI) tool for efficiently inserting data into SQL Server or PostgreSQL databases. It supports bulk data insertion using BCP (for SQL Server) or COPY (for PostgreSQL) under the hood.
 
+<p align="center"> 
+  <img src="./.assets/OFDL-COVER.png" />
+</p>
+
+
 Features 🛠️
 ------------
 
