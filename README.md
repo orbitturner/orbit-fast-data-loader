@@ -16,6 +16,17 @@ Features 🛠️
 *   **Customizable:** Allows users to specify various parameters such as the database host, port, username, password, etc.
 *   **CLI Flags:** Utilizes command-line flags for clear and concise input.
 
+## ⚠️ REQUIREMENTS 📋
+
+Before installing the Orbit Fast Data Loader, make sure you have the following prerequisites installed on your system:
+
+1. **Node.js**: Orbit Fast Data Loader is built on Node.js. You can download and install Node.js from [nodejs.org](https://nodejs.org/).
+
+2. **Git**: Git is used for cloning the repository. You can download and install Git from [git-scm.com](https://git-scm.com/).
+
+Once you have Node.js and Git installed, you're ready to set up and use the Orbit Fast Data Loader.
+
+
 Installation ⚙️
 ---------------
 

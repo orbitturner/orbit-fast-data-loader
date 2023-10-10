@@ -101,9 +101,9 @@ program
 program.addHelpText('after', '\n==> Examples:\n  $ OrbitFastDataLoader import --sgbd sqlserver -h localhost -p 1433 -d mydatabase -u myuser -P mypassword -t mytable -c dbo -f data.csv -s ,\n  $ OrbitFastDataLoader export --sgbd postgresql -h localhost -p 5432 -d mydatabase -u myuser -P mypassword -t mytable -c public -f data.csv -s ,\n  $ OrbitFastDataLoader install-deps');
 
 // Gestion des erreurs de commande inconnue
-program.on('command:*', () => {
-  logger.error('Invalid command. Use --help to see available commands.');
-});
+// program.on('command:*', () => {
+//   logger.error('Invalid command. Use --help to see available commands.');
+// });
 
 program.parse(process.argv);
 
