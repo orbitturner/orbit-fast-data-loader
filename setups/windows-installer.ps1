@@ -65,7 +65,7 @@ Copy-Item .\dist\* $app_directory -Recurse
 
 # Crée un script batch pour exécuter l'application
 Add-Content "$app_directory\OrbitFastDataLoader.bat" "@echo off"
-Add-Content "$app_directory\OrbitFastDataLoader.bat" "node `"$app_directory\index.js`" `"%*`" "
+Add-Content "$app_directory\OrbitFastDataLoader.bat" "node `"$app_directory\index.js`" %*"
 
 # Ajoute le répertoire des applications au PATH
 $newPath = [System.Environment]::GetEnvironmentVariable('Path', [System.EnvironmentVariableTarget]::Machine) + ";$app_directory"
